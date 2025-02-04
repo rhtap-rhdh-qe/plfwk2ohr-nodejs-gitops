@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: plfwk2ohr-nodejs-gitops
+  description: This is GitOps manifest for plfwk2ohr-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=plfwk2ohr-nodejs
+    backstage.io/kubernetes-id: plfwk2ohr-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: plfwk2ohr-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:plfwk2ohr-nodejs

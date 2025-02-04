@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  rhtap/gitops: plfwk2ohr-nodejs 
+  janus-idp.io/tekton: plfwk2ohr-nodejs
+  backstage.io/kubernetes-id: plfwk2ohr-nodejs
+  backstage.io/kubernetes-namespace: rhtap-app 
+  app.kubernetes.io/part-of: plfwk2ohr-nodejs
+resources: 
+- application-dev.yaml 
+- application-stage.yaml 
+- application-prod.yaml  
